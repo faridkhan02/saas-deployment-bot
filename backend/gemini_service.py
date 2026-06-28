@@ -1,15 +1,17 @@
 import os
 from dotenv import load_dotenv
-import google.generativeai as genai
+from google import genai
 
 load_dotenv()
 
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 def generate_chat_response(prompt: str) -> str:
     try:
-        model = genai.GenerativeModel(os.getenv("MODEL_NAME", "gemini-1.5-flash-latest"))
-        response = model.generate_content(prompt)
+        response = client.models.generate_content(
+            model="gemini-2.0-flash",
+            contents=prompt,
+        )
         return response.text
     except Exception as e:
         print(f"Error calling Gemini API: {e}")
