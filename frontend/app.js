@@ -47,7 +47,8 @@ async function handleSendMessage() {
     botBubble.textContent = "Thinking...";
     chatFeed.appendChild(botBubble);
     chatFeed.scrollTop = chatFeed.scrollHeight;
-
+//https://saas-deployment-bot.onrender.com/api/chat
+//http://localhost:8000/api/chat
     try {
         // Dynamic path configuration optimized for Vercel builds
         const response = await fetch('https://saas-deployment-bot.onrender.com/api/chat', {

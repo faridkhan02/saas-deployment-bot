@@ -9,7 +9,7 @@ client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 def generate_chat_response(prompt: str) -> str:
     try:
         response = client.models.generate_content(
-            model="gemini-2.0-flash",
+            model="gemini-flash-latest",
             contents=prompt,
         )
         return response.text
