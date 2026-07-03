@@ -35,7 +35,7 @@ class ChatRequest(BaseModel):
 #     bot_reply = generate_chat_response(user_message)
     
 #     return {"reply": bot_reply}
-
+# Just want to check (mikun)
 from fastapi import HTTPException
 import markdown  # 1. Import the markdown library
 
